@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水波荡漾的播放器按钮</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="circle">
+            <span class="circle__btn">
+                <i class="fas fa-play"></i>
+                <i class="fas fa-pause"></i>
+            </span>
+            <span class="circle__wave1"></span>
+            <span class="circle__wave2"></span>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector(".circle__btn")
+        const play = document.querySelector(".fa-play")
+        const pause = document.querySelector(".fa-pause")
+        const wave1 = document.querySelector(".circle__wave1")
+        const wave2 = document.querySelector(".circle__wave2")
+
+        btn.addEventListener("click", e => {
+          e.preventDefault()
+          btn.classList.toggle("shadow")
+          play.classList.toggle("visibility")
+          pause.classList.toggle("visibility")
+          wave1.classList.toggle("paused")
+          wave2.classList.toggle("paused")
+        })
+    </script>
+</body>
+</html>
